@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Login Form</title>
+
+<style>
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:#f2f2f2;
+    font-family:Arial;
+}
+
+.container{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    width:300px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+input{
+    width:100%;
+    border:none;
+    border-bottom:2px solid black;
+    padding:10px;
+    margin:15px 0;
+    outline:none;
+}
+
+.error{
+    color:red;
+    display:none;
+    margin:10px 0;
+}
+
+button{
+    width:100%;
+    padding:10px;
+    border:none;
+    border-radius:5px;
+    background:#ddd;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:#bbb;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <input type="text" id="username" placeholder="Enter your username">
+    <input type="password" id="password" placeholder="Enter your password">
+
+    <div class="error" id="errorMsg">
+        🥺 🥺 🥺 🥺 Error
+    </div>
+
+    <button onclick="login()">Submit</button>
+</div>
+
+<script>
+function login(){
+    var user = document.getElementById("username").value;
+    var pass = document.getElementById("password").value;
+    var error = document.getElementById("errorMsg");
+
+    if(user === "" || pass === ""){
+        error.style.display = "block";
+    } else {
+        error.style.display = "none";
+        alert("Login Successful ✅");
+    }
+}
+</script>
+
+</body>
+</html>
